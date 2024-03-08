@@ -1,3 +1,76 @@
+// search techniques in javascript
+// 1. linear search
+// 2. binary search
+
+// searching
+// 1. linear search
+
+// Example 1
+let arr = [1, 2, 3, 4];
+let search = 3;
+let found = false;
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === search) {
+        found = true;
+        break;
+    }
+}
+console.log(found); // true
+
+// Example 2
+arr = [1, 2, 3, 4];
+search = 5;
+found = false;
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === search) {
+        found = true;
+        break;
+    }
+}
+console.log(found); // false
+
+// 2.binary search
+// binary search is faster than linear search
+// but it only works on sorted array
+
+// Example 3
+arr = [1, 2, 3, 4];
+search = 3;
+let start = 0;
+let end = arr.length - 1;
+found = false;
+while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
+    if (arr[mid] === search) {
+        found = true;
+        break;
+    } else if (arr[mid] < search) {
+        start = mid + 1;
+    } else {
+        end = mid - 1;
+    }
+}
+console.log(found); // true
+
+// Example 4
+arr = [1, 2, 3, 4];
+search = 5;
+start = 0;
+end = arr.length - 1;
+found = false;
+while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
+    if (arr[mid] === search) {
+        found = true;
+        break;
+    } else if (arr[mid] < search) {
+        start = mid + 1;
+    } else {
+        end = mid - 1;
+    }
+}
+console.log(found); // false
+
 // types for search in array and object in products array
 // 1. indexOf - search in array and string name, price, year, month
 // 2. find - search in array of object
